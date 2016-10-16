@@ -9,11 +9,6 @@ RUN apt-get -y install \
 #
 RUN curl https://omnitruck.chef.io/install.sh | bash -s -- -P chefdk -v 0.18.30
 #
-# use sudo -s to change root pw and login as root
-# we start off as chefuser and its in sudo
-#
-USER chefuser
-#
 # git configuration
 #
 RUN git config --global user.name "chefuser" && \
@@ -21,3 +16,8 @@ RUN git config --global user.name "chefuser" && \
     git config --global core.editor vi && \
     git clone https://github.com/BilalShahWork/chef-repo /home/chefuser/chef-repo
 WORKDIR /home/chefuser/chef-repo
+#
+# use sudo -s to change root pw and login as root
+# we start off as chefuser and its in sudo
+#
+USER chefuser

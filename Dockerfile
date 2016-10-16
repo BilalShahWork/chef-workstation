@@ -1,7 +1,7 @@
 # comments in a dockerfile
 FROM bilalshah/chef-common:latest
 MAINTAINER Bilal Shah <bilal.shah.mail@gmail.com>
-RUN sudo apt-get -y install \
+RUN apt-get -y install \
     git-all
 #
 # visit https://downloads.chef.io/chef-dk/ubuntu/   and use the version
